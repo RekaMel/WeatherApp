@@ -6,6 +6,7 @@
 .card {
   max-width: 800px;
   margin: 60px auto;
+  margin-bottom: 0;
   border-radius: 12px;
   box-shadow: 5px 5px 10px rgba(131, 131, 131, 0.5);
   background: radial-gradient(
@@ -51,4 +52,8 @@
 
 .search-form {
   margin-bottom: 20px;
+}
+.source-code {
+  max-width: 800px;
+  margin: 0 auto;
 }
