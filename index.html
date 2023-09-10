@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/dea13656e1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="main">
+          <form class="search-form" id="city-form">
+            <div class="row">
+              <div class="col-8">
+                <input
+                  type="search"
+                  placeholder="Search location..."
+                  class="form-control"
+                  id="inputCity"
+                />
+              </div>
+              <div class="col-2">
+                <input type="submit" value="Search" class="btn btn-primary" />
+              </div>
+              <div class="col-2">
+                <button class="btn btn-success w-100" id="current-location-btn">
+                  Current
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div class="row city">
+            <div class="col-7">
+              <h1 id="city">Vienna</h1>
+              <p id="dayTime">Wed 10:39am</p>
+              <p id="type">Rainy</p>
+            </div>
+            <div class="col-5">
+              <i
+                class="fa-solid fa-cloud fa-xl icon"
+                style="color: #437adb"
+              ></i>
+
+              <span class="temperature" id="temp">21</span>
+              <span class="units"
+                ><a href="#" id="celsius">°C</a>|
+                <a href="#" id="fahrenheit">°F</a></span
+              >
+            </div>
+          </div>
+          <div class="row data">
+            <div class="col-6">Humidity: <span id="hum">83</span>%</div>
+            <div class="col-6">Wind: <span id="speed">4</span> km/hour</div>
+          </div>
+          <div class="row forecast">
+            <div class="col">
+              <p>Mon</p>
+              <p>😊</p>
+              <p>21C/ 23C</p>
+            </div>
+            <div class="col">
+              <p>Tue</p>
+              <p>⛅</p>
+              <p>22C/ 24C</p>
+            </div>
+            <div class="col">
+              <p>Wed</p>
+              <p>⛅</p>
+              <p>20C/ 23C</p>
+            </div>
+            <div class="col">
+              <p>Thr</p>
+              <p>🌧️</p>
+              <p>19C/21C</p>
+            </div>
+            <div class="col">
+              <p>Fri</p>
+              <p>☀️</p>
+              <p>22C/ 24C</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/app.js"></script>
+  </body>
+</html>

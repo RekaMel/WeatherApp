@@ -1,0 +1,54 @@
+.data {
+  background-color: rgb(216, 216, 246);
+  max-width: 80%;
+  text-align: center;
+}
+.card {
+  max-width: 800px;
+  margin: 60px auto;
+  border-radius: 12px;
+  box-shadow: 5px 5px 10px rgba(131, 131, 131, 0.5);
+  background: radial-gradient(
+    circle at 1.3% 2.8%,
+    rgb(239, 249, 249) 0%,
+    rgb(182, 199, 226) 100.2%
+  );
+}
+.city {
+  max-width: 80%;
+  margin: 0 auto;
+}
+.icon {
+  height: 40px;
+  padding-right: 20px;
+  position: relative;
+  top: -15px;
+}
+.temperature {
+  color: black;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.units {
+  position: relative;
+  top: -36px;
+}
+
+.search {
+  margin-bottom: 20px;
+}
+.main {
+  margin-left: 80px;
+  padding-top: 20px;
+}
+.forecast {
+  text-align: center;
+  position: relative;
+  left: -50px;
+}
+
+.search-form {
+  margin-bottom: 20px;
+}
