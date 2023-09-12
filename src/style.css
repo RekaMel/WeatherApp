@@ -36,15 +36,15 @@ body {
   left: -5px;
 }
 
-.search {
-  margin-bottom: 20px;
-}
-
 .forecast {
   text-align: center;
   background-color: #2b90c6;
   border-radius: 15px;
   padding-top: 20px;
+}
+
+.description {
+  text-transform: capitalize;
 }
 
 .search-form {

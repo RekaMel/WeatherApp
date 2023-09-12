@@ -71,10 +71,10 @@ function showTemperature(response) {
   let humidity = response.data.main.humidity;
   let hum = document.querySelector("#hum");
   hum.innerHTML = humidity;
-  let weather = response.data.weather[0].main;
+  let weather = response.data.weather[0].description;
   let weatherStatus = document.querySelector("#type");
   weatherStatus.innerHTML = weather;
-  let wind = response.data.wind.speed;
+  let wind = Math.round(response.data.wind.speed);
   let windSpeed = document.querySelector("#speed");
   windSpeed.innerHTML = wind;
 }
