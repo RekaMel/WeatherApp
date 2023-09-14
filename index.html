@@ -31,6 +31,7 @@
                   placeholder="Search location..."
                   class="form-control"
                   id="inputCity"
+                  autocomplete="off"
                 />
               </div>
               <div class="col-2">
@@ -38,7 +39,7 @@
               </div>
               <div class="col-2">
                 <button
-                  class="btn btn-success w-100 current"
+                  class="btn btn-success current"
                   id="current-location-btn"
                 >
                   Current
@@ -62,7 +63,7 @@
 
               <span class="temperature" id="temp">21</span>
               <span class="units"
-                ><a href="#" id="celsius">°C</a>|
+                ><a href="#" id="celsius" class="active">°C</a>|
                 <a href="#" id="fahrenheit">°F</a></span
               >
             </div>

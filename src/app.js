@@ -24,25 +24,6 @@ let day = days[now.getDay()];
 
 currentTime.innerHTML = `${day} ${hours}:${minutes}`;
 
-function convert(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temp");
-  let temperature = temperatureElement.innerHTML;
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
-}
-
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", convert);
-
-function convertBack(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temp");
-  temperature.innerHTML = "21";
-}
-
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", convertBack);
-
 function displayCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#inputCity");
@@ -62,7 +43,8 @@ function searchCity(city) {
 //let cityInput = document.querySelector("#inputCity");
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
   let temp = document.querySelector("#temp");
   temp.innerHTML = temperature;
   let city = document.querySelector("#city");
@@ -100,3 +82,29 @@ function showLocation(position) {
 
 let button = document.querySelector("#current-location-btn");
 button.addEventListener("click", showMyWeather);
+
+function convert(event) {
+  event.preventDefault();
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let temperatureElement = document.querySelector("#temp");
+  let temperature = temperatureElement.innerHTML;
+  temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+}
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", convert);
+
+function convertBack(event) {
+  event.preventDefault();
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", convertBack);
+let celsiusTemperature = null;
+
+searchCity("Vienna");

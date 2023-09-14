@@ -67,3 +67,13 @@ body {
 .btn-success {
   background-color: #7bb6b7;
 }
+
+.active {
+  color: white;
+  cursor: default;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+}
