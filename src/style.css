@@ -36,7 +36,7 @@ body {
   left: -5px;
 }
 
-.forecast {
+.weather-forecast {
   text-align: center;
   background-color: #2b90c6;
   border-radius: 15px;
@@ -78,18 +78,18 @@ body {
   text-decoration: none;
 }
 
-.weather-forecast-day {
+.weather-forecast-date {
   font-size: 18px;
   opacity: 0.7;
 }
-.weather-forecast-temp {
+.weather-forecast-temperatures {
   font-size: 16px;
 }
 
-.weather-forecast-temp-max {
+.weather-forecast-temperature-max {
   padding-right: 10px;
 }
-.weather-forecast-temp-min {
+.weather-forecast-temperature-min {
   padding-left: 10px;
   opacity: 0.7;
 }
