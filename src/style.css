@@ -77,3 +77,19 @@ body {
 .active:hover {
   text-decoration: none;
 }
+
+.weather-forecast-day {
+  font-size: 18px;
+  opacity: 0.7;
+}
+.weather-forecast-temp {
+  font-size: 16px;
+}
+
+.weather-forecast-temp-max {
+  padding-right: 10px;
+}
+.weather-forecast-temp-min {
+  padding-left: 10px;
+  opacity: 0.7;
+}
