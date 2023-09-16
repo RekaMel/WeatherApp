@@ -24,33 +24,42 @@ let day = days[now.getDay()];
 
 currentTime.innerHTML = `${day} ${hours}:${minutes}`;
 
-//function displayForecast() {
-//let forecastElement = document.querySelector("#forecast");
-//let days = ["Thu", "Fri", "Sat", "Sun"];
-//let forecastHTML = `<div class="row">`;
+function displayForecast(response) {
+  let forecast = response.data.daily;
 
-//days.forEach(function (day) {
-//forecastHTML =
-//forecastHTML +
-//`<div class="col-2">
-//        <div class="weather-forecast-day">Mon</div>
-//      <img
+  let forecastElement = document.querySelector("#forecast");
 
-//src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-//      alt="clear"
-//  />
-//<div class="weather-forecast-temp">
-//<span class="weather-forcast-temp-max">21°</span
-// ><span class="weather-forecast-temp-min">18°</span>
-// </div>
-//</div>`;
-//});
+  let days = ["Thu", "Fri", "Sat", "Sun"];
 
-//forecastHTML = forecastHTML + `</div>`;
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col">
+        <div class="weather-forecast-date">${forecastDay.dt}</div>
+        <img
+          src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> ${forecastDay.temp.max} </span>
+          <span class="weather-forecast-temperature-min"> ${forecastDay.temp.min} </span>
+        </div>
+      </div>
+  `;
+  });
 
-//forecastElement.innerHTML = forecastHTML;
-// console.log(forecastHTML);
-//}
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function displayCity(event) {
   event.preventDefault();
@@ -93,6 +102,7 @@ function showTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 
 function showMyWeather(event) {
@@ -135,36 +145,4 @@ let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", convertBack);
 let celsiusTemperature = null;
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
-  let days = ["Thu", "Fri", "Sat", "Sun"];
-
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-      <div class="col">
-        <div class="weather-forecast-date">${day}</div>
-        <img
-          src="http://openweathermap.org/img/wn/50d@2x.png"
-          alt=""
-          width="42"
-        />
-        <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> 18° </span>
-          <span class="weather-forecast-temperature-min"> 12° </span>
-        </div>
-      </div>
-  `;
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
-}
-
 searchCity("Vienna");
-
-displayForecast();
