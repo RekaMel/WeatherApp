@@ -8,7 +8,7 @@ body {
 }
 .weather-app {
   border-radius: 15px;
-  padding: 30px;
+  padding: 30px 40px;
   border: 1px solid #dadde1;
   color: white;
 
@@ -41,7 +41,7 @@ body {
   text-align: center;
   background-color: #2b90c6;
   border-radius: 15px;
-  padding-top: 20px;
+  padding: 20px;
 }
 
 .description {
@@ -54,19 +54,34 @@ body {
 
 .weather-details {
   background-color: #2b90c6;
-  height: 30px;
+
   border-radius: 15px;
   text-align: center;
 
-  vertical-align: middle;
   margin-top: 20px;
   margin-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  opacity: 0.8;
+}
+
+.fa-wind {
+  padding-right: 15px;
+}
+
+.fa-percent {
+  padding-right: 10px;
 }
 .btn-primary {
-  background-color: #f5c496;
+  background-color: #e29e5f;
+  transition: all 150ms ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #df730d;
 }
 .btn-success {
-  background-color: #7bb6b7;
+  background-color: #6a9c9d;
 }
 .active {
   color: white;
