@@ -112,6 +112,8 @@ function showTemperature(response) {
   let wind = Math.round(response.data.wind.speed);
   let windSpeed = document.querySelector("#speed");
   windSpeed.innerHTML = wind;
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -141,6 +143,7 @@ function convert(event) {
   event.preventDefault();
   celsius.classList.remove("active");
   fahrenheit.classList.add("active");
+
   let temperatureElement = document.querySelector("#temp");
   let temperature = temperatureElement.innerHTML;
   temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
